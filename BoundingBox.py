@@ -28,8 +28,8 @@ for folders in folderList:
                         if (count==2): com1=i
                         if (count==3): com2=i; break
                 try:
-                    lat=float(line[com1+1:com2])
-                    lon=float(line[com2+1:])
+                    lon=float(line[com1+1:com2])
+                    lat=float(line[com2+1:])
 
                     latitude=int((lat-int(lat))*700)
                     longitude=int((lon-int(lon))*700)
