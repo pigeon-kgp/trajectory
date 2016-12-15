@@ -71,9 +71,17 @@ def Temporal():
     date=[str(x) for x in raw_input().split()]
 
     folderName=date[0]+"-"+date[1]+"-"+date[2]
-    os.mkdir(folderName)
-    os.chdir(folderName)
-
+    
+    flag=0
+    folders=os.listdir(os.getcwd())
+    for name in folders:
+        if(folderName == name):
+            flag=1      
+    if(flag):
+        os.chdir(folderName)
+    else:
+        os.mkdir(folderName)
+        os.chdir(folderName)
     print("Enter start Time HH MM SS")
     start=[int(x) for x in raw_input().split()]
     
