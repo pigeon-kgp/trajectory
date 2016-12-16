@@ -1,15 +1,15 @@
 import os
 import numpy as np
 import cv2
-point1=[116.10041,88322]#test case
+point1=[115.96198,39.75903]#test case
 point2=[117.10539,40.11289]
 def Grid(point1,point2):#point1 point2 are list
     path=raw_input("Enter Path\n")
     OutputPath=raw_input("Enter Output src\n")
     folderList=os.listdir(path+'/')
     
-    lon=int(raw_input())
-    lat=int(raw_input())
+    lon=int(raw_input("Enter Columns : "))
+    lat=int(raw_input("Enter Rows : "))
     
     loniterator=(point2[0]-point1[0])/lon
     latiterator=(point2[1]-point1[1])/lat
@@ -37,8 +37,16 @@ def Grid(point1,point2):#point1 point2 are list
             with open(path+'/'+folders+'/'+files,"rt") as InputFile:        
                 #myfile = open(path+'/'+folders+'/'+files, "r")
                 print("Extracting.."+path+'/'+folders+'/'+files)
+                totalCost=0
+                for line in InputFile:
+                    totalCost+=1
+                cost=0
+                totalCost=float(totalCost)
+		        #totalCost=float(totalCost)
+                InputFile.seek(0)
                 for lines in InputFile:
                     c=0
+                    cost+=1
                     for i in range(len(lines)):
                         
                         if(lines[i]==','):
@@ -62,17 +70,27 @@ def Grid(point1,point2):#point1 point2 are list
                                     if(latData>=grid[str(i)+str(j)][1]):
                                         key=str(i)+str(j)
                                         d=1
+                            elif(j==lon-1):
+                                if(lonData>=grid[str(i)+str(j)][0]):
+                                    if(latData>=grid[str(i)+str(j)][1] and latData<grid[str(i+1)+str(j)][1]):
+                                        key=str(i)+str(j)
+                                        d=1
+                            elif(i==lat-1):
+                                if(lonData>=grid[str(i)+str(j)][0] and lonData<grid[str(i)+str(j+1)][0]):
+                                    if(latData>=grid[str(i)+str(j)][1]):
+                                        key=str(i)+str(j)
+                                        d=1
                             else:
-
-                            #print("Merry  Chritmas")
                                 if(lonData>=grid[str(i)+str(j)][0] and lonData<grid[str(i+1)+str(j+1)][0]):
                                     if(latData>=grid[str(i)+str(j)][1] and latData<grid[str(i+1)+str(j+1)][1]):
                                         key=str(i)+str(j)
                                         d=1
-                                        print(d)
-
-
+                            #print(d)
+                    cost=float(cost)
+                    percent=float(cost/totalCost)*100
+                    print("Completed......"+str(percent)+" %")
+                            
                     if(d):
-                        
                         filePointerList[key].write(lines)
+                print(path+'/'+folders+'/'+files+".........complete.....")
 Grid(point1,point2)
