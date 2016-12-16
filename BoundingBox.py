@@ -86,6 +86,9 @@ tempx=cenx;tempy=ceny
 cv2.setMouseCallback('Map',resetc,param=None)  
 cv2.createTrackbar("Length","Map",l,100,lch)
 while(1):
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(imgtemp,' On the map use w,a,s,d to control the bounding box',(5,600), font, .5,(255,255,255),1)
+    cv2.putText(imgtemp,' +,-,>,< to adjust its size.\nHit space to reset the box and q to quit',(5,617), font, .5,(255,255,255),1)
     cv2.imshow("Map",imgtemp)
     flag=0
     c = cv2.waitKey(1)
