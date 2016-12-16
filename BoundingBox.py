@@ -1,63 +1,74 @@
 import os
 import numpy as np
 import cv2
-img = np.zeros((700, 700, 3), np.uint8)
-#cv2.imshow("image",img)
-#1131,2008-02-02 13:30:49,116.45804,39.86973
-#latmin=180;lonmin=180;latmax=-180;lonmax=-18000, 3), np.uint8)
-path=raw_input("Enter Path\n")
-folderList=os.listdir(path+'/')
-for folders in folderList:
-    os.chdir(path+'/'+folders+'/')
-    fileList=os.listdir(path+'/'+folders+'/')
-    for files in fileList:
-        with open(files,"rt") as InputFile:        
-            myfile = open(path+'/'+folders+'/'+files, "r")
-            print("Extracting.."+path+'/'+folders+'/'+files)
-            counter=0
-            while(True):
-                counter+=1
-                line = myfile.readline()
-                if not line:
-                    myfile.close() 
-                    break
-                count=0;com1=0;com2=0
-                for i in range(len(line)):
-                    if (line[i]=="," ):
-                        count+=1
-                        if (count==2): com1=i
-                        if (count==3): com2=i; break
-                try:
-                    lon=float(line[com1+1:com2])
-                    lat=float(line[com2+1:])
+point1=[116.10041,88322]
+point2=[117.10539,40.11289]
+def Grid(point1,point2):#point1 point2 are list
+    path=raw_input("Enter Path\n")
+    OutputPath=raw_input("Enter Output src\n")
+    folderList=os.listdir(path+'/')
+    
+    lon=int(raw_input())
+    lat=int(raw_input())
+    
+    loniterator=(point2[0]-point1[0])/lon
+    latiterator=(point2[1]-point1[1])/lat
 
-                    latitude=int((lat-int(lat))*700)
-                    longitude=int((lon-int(lon))*700)
-                    #print("Merry Chritmas")
+    os.chdir(OutputPath+'/')
+    os.mkdir("Grid")
+    os.chdir("Grid")
 
-                except:
-                    print("Some error occured. Ignoring error.")
-                    continue   
-                img[latitude,longitude][0]+=10          
-                img[latitude,longitude][1]+=10
-                img[latitude,longitude][2]+=10
+    filePointerList={}
+    grid={}
 
-         #   if (lat==0 or lon==0): print(counter); break
-         #   if (lat>latmax): latmax=lat
-         #   if (lat<latmin): latmin=lat
-         #   if (lon>lonmax): lonmax=lon
-         #   if (lon<lonmin): lonmin=lon
+    for i in range(0,lat):
+        for j in range(0,lon):
+            filePointerList[str(i)+str(j)]=open(str(i)+"x"+str(j)+".txt",'a')
+            grid[str(i)+str(j)]=[point1[0]+i*loniterator,point1[1]+j*latiterator]
 
-#print ("Minimum: "+latmin+", "+lonmin)
-#print ("Maximum: "+latmax+", "+lonmax)
-#choice=input("Would you like to save it to a file?")
-#if (choice.lower()[0]=="y"):
-#    name=input("Pl. enter name of file without extension: ")
-#    f=open(name+".txt","w")
-#    f.write("Minimum: "+latmin+", "+lonmin+"\nMaximum: "+latmax+", "+lonmax)                                         
-cv2.imshow("image",img)
-while(1):
-    a=cv2.waitKey(1)
-    if(a=='27'):
-        break
+    for folders in folderList:
+        #os.chdir(path+'/'+folders+'/')
+        fileList=os.listdir(path+'/'+folders+'/')
+        for files in fileList:
+            with open(path+'/'+folders+'/'+files,"rt") as InputFile:        
+                #myfile = open(path+'/'+folders+'/'+files, "r")
+                print("Extracting.."+path+'/'+folders+'/'+files)
+                for lines in InputFile:
+                    c=0
+                    for i in range(len(lines)):
+                        
+                        if(lines[i]==','):
+                            c+=1
+                        if(c==1):
+                            lonBegin=i+2
+                        if(c==2):
+                            latBegin=i+2
+                            lonEnd=i+1
+                    latEnd=len(lines)-2
 
+                    lonData=float(lines[lonBegin:lonEnd])
+                    latData=float(lines[latBegin:latEnd])
+                    
+                    print(lonData,latData)
+                    c=0
+                    for i in range(0,lat-1):
+                        for j in range(0,lon-1):
+                            
+                            if(lonData>=grid[str(i)+str(j)][0] and lonData<grid[str(i+1)+str(j+1)][0]):
+                                if(latData>=grid[str(i)+str(j)][1] and latData<grid[str(i+1)+str(j+1)][1]):
+                                    key=str(i)+str(j)
+                                    c=1
+
+
+                    if(c):
+                        
+                        filePointerList[key].write(lines)
+Grid(point1,point2)
+                
+
+
+
+
+                            
+                        
+                        
