@@ -4,9 +4,7 @@ import cv2
 from math import fabs
 img = np.zeros((700, 700, 3), np.uint8)
 cenx=ceny=no=0
-#cv2.imshow("image",img)
-#1131,2008-02-02 13:30:49,116.45804,39.86973
-#latmin=180;lonmin=180;latmax=-180;lonmax=-18000, 3), np.uint8)
+
 path=raw_input("Enter Path\n")
 folderList=os.listdir(path+'/')
 for folders in folderList:
@@ -35,31 +33,15 @@ for folders in folderList:
 
                     latitude=int((lat-115.95)*550.0)
                     longitude=int((lon-39.5)*550.0)
-                    #print("Merry Chritmas")
 
                 except:
                     print("Some error occured. Ignoring error.")
                     continue   
                 if (latitude<700 and latitude>=0 and longitude<700 and longitude>=0):
-                  #print str(latitude)+"  "+str(longitude)
                   img[longitude,latitude][0]+=10          
                   img[longitude,latitude][1]+=10
                   img[longitude,latitude][2]+=10
                   cenx+=latitude; ceny+=longitude; no+=1
-
-         #   if (lat==0 or lon==0): print(counter); break
-         #   if (lat>latmax): latmax=lat
-         #   if (lat<latmin): latmin=lat
-         #   if (lon>lonmax): lonmax=lon
-         #   if (lon<lonmin): lonmin=lon
-
-#print ("Minimum: "+latmin+", "+lonmin)
-#print ("Maximum: "+latmax+", "+lonmax)
-#choice=input("Would you like to save it to a file?")
-#if (choice.lower()[0]=="y"):
-#    name=input("Pl. enter name of file without extension: ")
-#    f=open(name+".txt","w")
-#    f.write("Minimum: "+latmin+", "+lonmin+"\nMaximum: "+latmax+", "+lonmax)
 
 def findout (cenx, ceny, l, b):
     count=0
@@ -69,13 +51,25 @@ def findout (cenx, ceny, l, b):
                 count+=1
     return count
 
-imgtemp=img
-def resetc(event,x,y,flags,param):
+imgtemp= np.zeros((700, 700, 3), np.uint8)
+def resetc(event,x,y,flags,param=None):
+    global tempx; global tempy
+    tempx=x; tempy=y
     if (event == cv2.EVENT_LBUTTONDOWN):
-        imgtemp=img
+        for i in xrange(700):
+            for j in xrange(700):
+                imgtemp[i,j][0]=img[i,j][0]
+                imgtemp[i,j][1]=img[i,j][1]
+                imgtemp[i,j][2]=img[i,j][2]
         pts = np.array([[x+l,y+b],[x+l,y-b],[x-l,y-b],[x-l,y+b]], np.int32)
         pts = pts.reshape((-1,1,2))
         cv2.polylines(imgtemp,[pts],True,(0,0,255))
+
+def lch(pos):
+    global tempx; global tempy
+    resetc(cv2.EVENT_LBUTTONDOWN,tempx,tempy,1000)
+
+print("\nCreating map...\n\nOn the map use w,a,s,d to control the bounding box and +,-,>,< to adjust its size.\nHit space to reset the box and q to quit.")
 
 cenx/=no; ceny/=no
 l=2; b=2;num=0
@@ -86,11 +80,41 @@ while(True):
     elif (num1>num2): l+=2; num=num1
     elif (num1<num2): b+=2; num=num2
     else: l+=2; b+=2; num=findout(cenx,ceny,l+2,b+2)
-resetc(cv2.EVENT_LBUTTONDOWN,cenx,ceny, 1000,0)
-cv2.setMouseCallback('Map',resetc)       
-cv2.imshow("Map",imgtemp)
+lorg=l;borg=b
+resetc(cv2.EVENT_LBUTTONDOWN,cenx,ceny, 1000)
+tempx=cenx;tempy=ceny
+cv2.setMouseCallback('Map',resetc,param=None)  
+cv2.createTrackbar("Length","Map",l,100,lch)
 while(1):
-    a=cv2.waitKey(2)
-    if(a==27):
-      break
-
+    cv2.imshow("Map",imgtemp)
+    flag=0
+    c = cv2.waitKey(1)
+    if( 'w' == chr(c & 255)):
+        tempy-=10; flag=1
+    if( 's' == chr(c & 255)):
+        tempy+=10; flag=1
+    if( 'a' == chr(c & 255)):
+        tempx-=10; flag=1
+    if( 'd' == chr(c & 255)):
+         tempx+=10; flag=1
+    if( ' ' == chr(c & 255)):
+         tempx=cenx; tempy=ceny; l=lorg; b=borg; flag=1
+    if( '+' == chr(c & 255)):
+        b+=10; flag=1
+    if( '-' == chr(c & 255) and b>10):
+        b-=10; flag=1
+    if( '>' == chr(c & 255)):
+        l+=10; flag=1
+    if( '<' == chr(c & 255) and l>10):
+        l-=10; flag=1
+    if (flag==1):
+        resetc(cv2.EVENT_LBUTTONDOWN,tempx,tempy,1000)
+    if( 'q' == chr(c & 255)):
+        break
+choice=raw_input("Would you like to save the data of the bounding box?")
+if (choice.lower()[0]=="y"):
+    name=raw_input("Pl. enter name of file without extension: ")
+    path=raw_input("Where would you like to save it? ")
+    os.chdir(path)
+    f=open(name+".txt","w")
+    f.write("Minimum: "+str(((tempx-l)/550.0)+115.95)+", "+str((((tempy-b)/550.0)+39.5))+"\nMaximum: "+str(((tempx+l)/550.0)+115.95)+", "+str(((tempy+b)/550.0)+39.5))
