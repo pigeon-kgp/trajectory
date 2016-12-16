@@ -49,7 +49,7 @@ def Grid(point1,point2):#point1 point2 are list
                     lonData=float(lines[lonBegin:lonEnd])
                     latData=float(lines[latBegin:latEnd])
                     
-                    print(lonData,latData)
+                    #print(lonData,latData)
                     c=0
                     for i in range(0,lat-1):
                         for j in range(0,lon-1):
