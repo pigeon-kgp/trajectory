@@ -33,7 +33,7 @@ for folders in folderList:
                     #print("Merry Chritmas")
 
                 except:
-                    print("Some error occured. Ignoring error.")
+                    print("Some error occured....")
                     continue   
                 img[latitude,longitude][0]+=10          
                 img[latitude,longitude][1]+=10
