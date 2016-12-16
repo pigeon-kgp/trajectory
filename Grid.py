@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import cv2
-def Grid(point1,point2):
+def Grid(point1,point2):#point1 point2 are list
     path=raw_input("Enter Path\n")
     OutputPath=raw_input("Enter Output src\n")
     folderList=os.listdir(path+'/')
@@ -46,9 +46,12 @@ def Grid(point1,point2):
                     
                     print(lonData,latData)
                     
-                    for i in range(0,lat):
-                        for j in range(0,lon):
-                            if(grid[str(i)+str(j)]
+                    for i in range(0,lat-1):
+                        for j in range(0,lon-1):
+                            if(lonData>=grid[str(i)+str(j)][0] and lonData<grid[str(i+1)+str(j+1)][0]):
+                                if(latData>=grid[str(i)+str(j)][1] and latData<grid[str(i+1)+str(j+1)][1]):
+                                    key=str(i)+str(j)
+                    filePointerList[key].write(lines)
                 
 
 
