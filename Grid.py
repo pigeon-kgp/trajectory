@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import cv2
-point1=[116.10041,88322]
+point1=[116.10041,88322]#test case
 point2=[117.10539,40.11289]
 def Grid(point1,point2):#point1 point2 are list
     path=raw_input("Enter Path\n")
