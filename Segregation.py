@@ -1,7 +1,10 @@
-import glob
 import os
-def timeonly(a_list):
-    return a_list[1]
+def timeonly(line):
+     for k in range(len(line)):                    
+                          if (line[k]==","):
+                              break
+     timehere=int(line[k+12:k+14])*3600+int(line[k+15:k+17])*60+int(line[k+18:k+20])+24*3600*(int(line[k+9:k+11])-2)
+     return timehere
 def seg(hours):
     
     path=raw_input("Enter Path\n")
@@ -33,18 +36,12 @@ def seg(hours):
                         broken+=1
                         break
                     try:
-                      for k in range(len(line)):
-                          
-                          if (line[k]==","):
-                              break
-                      date=line[k+1:k+11]
-                      time=int(line[k+12:k+14])*3600+int(line[k+15:k+17])*60+int(line[k+18:k+20])+24*3600*(int(line[k+9:k+11])-2)
+                      time=timeonly(line)
                     except:
-                        print ("Some error has occurred. Ignoring error.")
-                        continue
+                       print ("Some error has occurred. Ignoring error.")
+                       continue
                     if (time>=3600*(time_out-hours) and time <=time_out*3600):
-                          
-                        parentlist.append([line,time,date])
+                        parentlist.append(line)
                     if (time>=3600*time_out):
                         myfile.close()
                         break
@@ -53,16 +50,18 @@ def seg(hours):
         parentlist.sort(key=timeonly) 
         if (len(parentlist)>0):
             os.chdir(OutputPath+'/')
-            #tpath=OutputPath+'/'+str((parentlist[0])[2])
             try:
-                os.mkdir(str((parentlist[0])[2]))
-            #os.chdir(OutputPath+'/'+str((parentlist[0])[2])+'/')
+                for k in range(len(parentlist[0])):
+                    if (line[k]==","):
+                              break
+                datenow=line[k+1:k+11]
+                os.mkdir(datenow)
             except:
-                print("Ho Ho Ho!")
+                print("Directory already exists :-) !")
             
-            time_print=(time_out)-(int(str((parentlist[0])[2])[8:10])-2)*24
+            time_print=(time_out)-(int(datenow[8:10])-2)*24
             time_print=str(time_print-hours)+":00 - "+str(time_print)+":00"
-            towrite=open(OutputPath+'/'+str((parentlist[0])[2])+"/"+time_print+".txt","a")
+            towrite=open(OutputPath+'/'+datenow+"/"+time_print+".txt","a")
             for i in parentlist:   
                 towrite.write(i[0])
 

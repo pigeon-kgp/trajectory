@@ -5,5 +5,4 @@ now user has to enter full path
 
 only seg.py working now
 
-Bounding-box supported only on python2.
-Rest are on python3
+Supports only python2
