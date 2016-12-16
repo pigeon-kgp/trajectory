@@ -92,5 +92,5 @@ def Grid(point1,point2):#point1 point2 are list
                             
                     if(d):
                         filePointerList[key].write(lines)
-                print(path+'/'+folders+'/'+files+".........complete.....")
+                print(files+".........complete.....")
 Grid(point1,point2)
