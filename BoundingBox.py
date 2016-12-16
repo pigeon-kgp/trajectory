@@ -1,11 +1,10 @@
+path=raw_input("Enter Path\n")
 import os
 import numpy as np
 import cv2
 from math import fabs
 img = np.zeros((700, 700, 3), np.uint8)
 cenx=ceny=no=0
-
-path=raw_input("Enter Path\n")
 folderList=os.listdir(path+'/')
 for folders in folderList:
     os.chdir(path+'/'+folders+'/')
@@ -87,8 +86,8 @@ cv2.setMouseCallback('Map',resetc,param=None)
 cv2.createTrackbar("Length","Map",l,100,lch)
 while(1):
     font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(imgtemp,' On the map use w,a,s,d to control the bounding box',(5,600), font, .5,(255,255,255),1)
-    cv2.putText(imgtemp,' +,-,>,< to adjust its size.\nHit space to reset the box and q to quit',(5,617), font, .5,(255,255,255),1)
+    cv2.putText(imgtemp,' On the map use w,a,s,d to control the bounding box.',(5,600), font, .5,(255,255,255),1)
+    cv2.putText(imgtemp,' +,-,>,< to adjust its size. Hit space to reset the box and q to quit.',(5,617), font, .5,(255,255,255),1)
     cv2.imshow("Map",imgtemp)
     flag=0
     c = cv2.waitKey(1)
@@ -120,4 +119,4 @@ if (choice.lower()[0]=="y"):
     path=raw_input("Where would you like to save it? ")
     os.chdir(path)
     f=open(name+".txt","w")
-    f.write("Minimum: "+str(((tempx-l)/550.0)+115.95)+", "+str((((tempy-b)/550.0)+39.5))+"\nMaximum: "+str(((tempx+l)/550.0)+115.95)+", "+str(((tempy+b)/550.0)+39.5))
+    f.write("Minimum: %.5f, %.5f\nMaximum: %.5f, %.5f"%((tempx-l)/550.0+115.95,(tempy-b)/550.0+39.5,(tempx+l)/550.0+115.95,(tempy+b)/550.0+39.5))
