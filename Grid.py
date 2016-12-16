@@ -15,7 +15,11 @@ def Grid(point1,point2):#point1 point2 are list
     latiterator=(point2[1]-point1[1])/lat
 
     os.chdir(OutputPath+'/')
-    os.mkdir("Grid")
+    try:
+        os.mkdir("Grid")
+    except:
+        print("Ho ho ho!")
+
     os.chdir("Grid")
 
     filePointerList={}
@@ -50,25 +54,25 @@ def Grid(point1,point2):#point1 point2 are list
                     latData=float(lines[latBegin:latEnd])
                     
                     #print(lonData,latData)
-                    c=0
-                    for i in range(0,lat-1):
-                        for j in range(0,lon-1):
-                            
-                            if(lonData>=grid[str(i)+str(j)][0] and lonData<grid[str(i+1)+str(j+1)][0]):
-                                if(latData>=grid[str(i)+str(j)][1] and latData<grid[str(i+1)+str(j+1)][1]):
-                                    key=str(i)+str(j)
-                                    c=1
+                    d=0
+                    for i in range(0,lat):
+                        for j in range(0,lon):
+                            if(i==lat-1 and j==lon-1):
+                                if(lonData>=grid[str(i)+str(j)][0]):
+                                    if(latData>=grid[str(i)+str(j)][1]):
+                                        key=str(i)+str(j)
+                                        d=1
+                            else:
+
+                            #print("Merry  Chritmas")
+                                if(lonData>=grid[str(i)+str(j)][0] and lonData<grid[str(i+1)+str(j+1)][0]):
+                                    if(latData>=grid[str(i)+str(j)][1] and latData<grid[str(i+1)+str(j+1)][1]):
+                                        key=str(i)+str(j)
+                                        d=1
+                                        print(d)
 
 
-                    if(c):
+                    if(d):
                         
                         filePointerList[key].write(lines)
 Grid(point1,point2)
-                
-
-
-
-
-                            
-                        
-                        
