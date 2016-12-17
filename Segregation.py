@@ -26,18 +26,22 @@ def seg(hours):
             os.chdir(filePath)
             fileList=os.listdir(filePath)
             for file in fileList:
-                print("Extracting "+filePath+file)
+                print("Extracting "+filePath+"/"+file)
                 try:
-                  myfile = open(filePath+file, "rt")
+                  myfile = open(filePath+"/"+file, "rt")
                 except IOError:
                     ech="y"
                     if (rem==0):
-                      print ("Well, there seems to be a folder here instead of a file. Skip it and continue and remember choice?")
+                      print ("Well, there seems to be a folder here instead of a file. Skip it and continue?")
                       ech=raw_input()
-                      rem=1
                     if (ech.lower()[0]!="y"):
                       os._exit(0)
                     else:
+                        if (rem==0):
+                          print ("Remember choice?")
+                          er=raw_input()
+                          if (er.lower()[0]=="y"):
+                              rem=1
                         continue
                 flocate.seek(0)
                 fpos=0; flag=1
