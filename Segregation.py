@@ -1,6 +1,6 @@
 import os
 def timeonly(line):
-     for k in range(len(line)):                    
+     for k in range(len(line)):
                           if (line[k]==","):
                               break
      timehere=int(line[k+12:k+14])*3600+int(line[k+15:k+17])*60+int(line[k+18:k+20])+24*3600*(int(line[k+9:k+11])-2)
@@ -35,7 +35,7 @@ def seg(hours):
                     fpos=flocate.tell()
                     fline=flocate.readline()
                     if not fline: flag=0; break
-                    if (str(myfile) in fline):
+                    if (str(file) in fline):
                         for i in xrange(len(fline)):
                             if(fline[i]==" "):
                                 fposinline=int(fline[i+1:])
@@ -61,13 +61,6 @@ def seg(hours):
                     if (time>=3600*time_out):
                         brakeflag=0
                         myfile.close()
-                        fpos=0
-                        flocate.seek(0)
-                        while(True):
-                            fpos=flocate.tell()
-                            flineagain=flocate.readline()
-                            if not flineagain: break
-                            if (str(myfile) in flineagain): break
                         flocate.seek(fpos)
                         flocate.write(str(file)+" "+str(pos)+"\n")
                         break
