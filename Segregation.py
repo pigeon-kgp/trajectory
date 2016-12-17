@@ -12,7 +12,7 @@ def seg(hours):
     OutputPath+='/'
     path+='/'
     folderList=os.listdir(path)
-    time_out=0
+    time_out=0; rem=0
     if (24%hours!=0): print("Hours can only be factors of 24."); return
     
     while(True):
@@ -27,7 +27,18 @@ def seg(hours):
             fileList=os.listdir(filePath)
             for file in fileList:
                 print("Extracting "+filePath+file)
-                myfile = open(filePath+file, "rt")
+                try:
+                  myfile = open(filePath+file, "rt")
+                except IOError:
+                    ech="y"
+                    if (rem==0):
+                      print ("Well, there seems to be a folder here instead of a file. Skip it and continue and remember choice?")
+                      ech=raw_input()
+                      rem=1
+                    if (ech.lower()[0]!="y"):
+                      os._exit(0)
+                    else:
+                        continue
                 flocate.seek(0)
                 fpos=0; flag=1
                 fposinline=0
