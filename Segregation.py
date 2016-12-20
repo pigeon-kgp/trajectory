@@ -6,7 +6,7 @@ def timeonly(line):
      timehere=int(line[k+12:k+14])*3600+int(line[k+15:k+17])*60+int(line[k+18:k+20])+24*3600*(int(line[k+9:k+11])-2)
      return timehere
 def seg(hours):
-    
+    countp=0
     path=raw_input("Enter Path\n")
     OutputPath=raw_input("Enter output path\n")
     OutputPath+='/'
@@ -19,6 +19,7 @@ def seg(hours):
         time_out+=hours
         parentlist=[]
         brakeflag=1
+        countp+=1
 
         
         for folders in folderList:
@@ -26,7 +27,9 @@ def seg(hours):
             os.chdir(filePath)
             fileList=os.listdir(filePath)
             for file in fileList:
-                print("Extracting "+filePath+"/"+file)
+                os.system("clear")
+                print (str(((countp)*100)/countmax)+"% complete. ")
+                print("Extracting "+filePath+file+". ")
                 try:
                   myfile = open(filePath+"/"+file, "rt")
                 except IOError:
@@ -77,7 +80,9 @@ def seg(hours):
                         brakeflag=0
                         myfile.close()
                         flocate.seek(fpos)
-                        flocate.write(str(file)+" "+str(pos)+"\n")
+                        wrstr=str(file)+" "+str(pos)
+                        for sp in xrange(len(wrstr),30): wrstr+=" "
+                        flocate.write(wrstr+"\n")
                         break
         if (brakeflag==1): 
             break
@@ -100,9 +105,12 @@ def seg(hours):
                 towrite.write(i)
 
 n=int(raw_input("Pl enter hour segments: "))
+countmax=24/n * 7
 flocate=open("pos.txt","w")
 flocate.close()
 flocate=open("pos.txt","r+")
 seg(n)
+os.system("clear")
+print "100% complete"
 print("\nDone!")
 flocate.close()
