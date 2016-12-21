@@ -51,15 +51,21 @@ def findout (cenx, ceny, l, b):
     return count
 
 imgtemp= np.zeros((700, 700, 3), np.uint8)
+for i in xrange(700):
+    for j in xrange(700):
+        imgtemp[i,j][0]=img[i,j][0]
+        imgtemp[i,j][1]=img[i,j][1]
+        imgtemp[i,j][2]=img[i,j][2]
 def resetc(event,x,y,flags,param=None):
     global tempx; global tempy
     tempx=x; tempy=y
     if (event == cv2.EVENT_LBUTTONDOWN):
-        for i in xrange(700):
-            for j in xrange(700):
-                imgtemp[i,j][0]=img[i,j][0]
-                imgtemp[i,j][1]=img[i,j][1]
-                imgtemp[i,j][2]=img[i,j][2]
+        for i in xrange(prevy-prevb,prevy+prevb+1):
+            for j in xrange(prevx-prevl,prevx+prevl+1):
+                if imgtemp[i,j][2]==255:
+                    imgtemp[i,j][0]=img[i,j][0]
+                    imgtemp[i,j][1]=img[i,j][1]
+                    imgtemp[i,j][2]=img[i,j][2]
         pts = np.array([[x+l,y+b],[x+l,y-b],[x-l,y-b],[x-l,y+b]], np.int32)
         pts = pts.reshape((-1,1,2))
         cv2.polylines(imgtemp,[pts],True,(0,0,255))
@@ -72,6 +78,7 @@ print("\nCreating map...\n\nOn the map use w,a,s,d to control the bounding box a
 
 cenx/=no; ceny/=no
 l=2; b=2;num=0
+prevx=cenx; prevy=ceny; prevl=l; prevb=b
 while(True):
     num1=findout(cenx,ceny,l+2,b)
     num2=findout(cenx,ceny,l,b+2)
@@ -91,6 +98,8 @@ while(1):
     cv2.imshow("Map",imgtemp)
     flag=0
     c = cv2.waitKey(1)
+    prevx=tempx; prevy=tempy
+    prevl=l; prevb=b
     if( 'w' == chr(c & 255)):
         tempy-=10; flag=1
     if( 's' == chr(c & 255)):
@@ -113,7 +122,7 @@ while(1):
         resetc(cv2.EVENT_LBUTTONDOWN,tempx,tempy,1000)
     if( 'q' == chr(c & 255)):
         break
-choice=raw_input("Would you like to save the data of the bounding box?")
+choice=raw_input("Would you like to save the data of the bounding box? ")
 if (choice.lower()[0]=="y"):
     name=raw_input("Pl. enter name of file without extension: ")
     path=raw_input("Where would you like to save it? ")
