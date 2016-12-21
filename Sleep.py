@@ -18,13 +18,16 @@ for folders in folderList:
                 carno=line.split(",")[0]
                 try:
                     cars[carno][str([lat,lon])]+=1
-                except:
-                    cars[carno]={}
-                    cars[carno][str([lat,lon])]=1
+                except KeyError:
+                    try:
+                        cars[carno][str([lat,lon])]=1
+                    except KeyError:
+                        cars[carno]={}
+                        cars[carno][str([lat,lon])]=1
             myfile.close()
-
+print "\n"
 for i in cars:
     temp=""; max=0
     for j in cars[i]:
         if cars[i][j]>max: max=cars[i][j]; temp=str(j)
-    print str(i)+" probably resides at: "+temp[1:len(temp)-1]
+    print str(i)+" probably resides at: "+temp[1:len(temp)-1]+" as it has traced the point "+str(max)+" times."
