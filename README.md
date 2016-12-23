@@ -5,3 +5,5 @@ trajectory Planning
 now user has to enter full path
 
 Supports only python2
+
+Sample data added
