@@ -138,6 +138,7 @@ def Assess():
                 carno=info[0]
                 day=int((info[1])[8:10])
                 time=(info[1])[11:]; hr=int(time[0:2])
+                time=int(time[0:2])*3600+int(time[3:5])*60+int(time[6:])
                 if (hr>=sh and hr<eh and day==dt):
                     try:
                         if time<(cars[carno])[0]:
