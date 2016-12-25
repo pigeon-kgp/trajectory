@@ -170,6 +170,6 @@ while(True):
     choice=int(raw_input())
     os.system("clear")
     if (choice==1): Grid(point1,point2)
-    if (choice==2): Assess()
-    if (choice==3): break
+    elif (choice==2): Assess()
+    elif (choice==3): break
     else: print "Invalid choice."
