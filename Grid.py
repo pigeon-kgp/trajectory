@@ -34,8 +34,11 @@ def Grid(point1,point2):#point1 point2 are list
     for folders in folderList:
         #os.chdir(path+'/'+folders+'/')
         fileList=os.listdir(path+'/'+folders+'/')
+        totalcost=len(fileList)
+        Cost=0
         try:
           for files in fileList:
+              Cost+=1
               with open(path+'/'+folders+'/'+files,"rt") as InputFile:        
                 #myfile = open(path+'/'+folders+'/'+files, "r")
                 print("Extracting.."+path+'/'+folders+'/'+files)
@@ -90,7 +93,10 @@ def Grid(point1,point2):#point1 point2 are list
                             #print(d)
                     cost=float(cost)
                     percent=float(cost/totalCost)*100
-                    print("Completed......"+str(percent)+" %")
+                    os.system("clear")
+  
+                    print("Completed...."+str(int(Cost)*100/totalcost)+"%")
+                    print("............."+str(percent)+" %")
                             
                     if(d):
                         filePointerList[key].write(lines)
