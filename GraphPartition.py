@@ -1,9 +1,3 @@
-import os
-import numpy as np
-import cv2
-from math import fabs
-point1=[115.96198,39.75903]#test case
-point2=[117.10539,40.11289]
 def Assess(sdt,edt,sh,eh,myfile, files):
     #1409,2008-02-02 13:33:45,116.34732,39.8881
     cars={}
@@ -15,7 +9,7 @@ def Assess(sdt,edt,sh,eh,myfile, files):
         day=int((info[1])[8:10])
         time=(info[1])[11:]; hr=int(time[0:2])
         time=int(time[0:2])*3600+int(time[3:5])*60+int(time[6:])
-        if (hr>=sh and hr<eh and day>=sdt and day<edt):
+        if (hr>=sh and hr<eh and day>=sdt and day<=edt):
             try:
                 if time<(cars[carno])[0]: (cars[carno])[0]=time
                 if time>(cars[carno])[1]: (cars[carno])[1]=time
@@ -39,7 +33,7 @@ def Assess(sdt,edt,sh,eh,myfile, files):
                 day=int((info[1])[8:10])
                 time=(info[1])[11:]; hr=int(time[0:2])
                 time=int(time[0:2])*3600+int(time[3:5])*60+int(time[6:])
-                if (hr>=sh and hr<eh and day>=sdt and day<edt):
+                if (hr>=sh and hr<eh and day>=sdt and day<=edt):
                     try:
                         if time<(cars[carno])[0]:
                             flag=1
@@ -68,10 +62,56 @@ sdt=int(raw_input("Start day?: "))
 edt=int(raw_input("End day?: "))
 sh=int(raw_input("Start hour?: "))
 eh=int(raw_input("End hour?: "))
+import os
+from math import fabs
 fileList=os.listdir(OutputPath+'/')
 for files in fileList:
     with open(OutputPath+'/'+files,"rt") as InputFile:
         print("Extracting.."+OutputPath+'/'+files)
         Assess(sdt,edt,sh,eh,InputFile,files)
 graph.sort(key=toret, reverse=True)
-print graph
+prevt=graph[0][1]
+toplot={}
+count=0
+for i in graph:
+    gst=int(i[0][0])
+    gen=int(i[0][2])
+    tr=int(i[1])
+    for j in xrange(gst-1,gst+2):
+        for k in xrange (gen-1,gen+2):
+            for l in graph:
+                if l[0]==str(j)+"x"+str(k) and fabs(l[1]-tr)<=1:
+                    try:
+                        toplot[count].append(str(j)+'x'+str(k))
+                    except:
+                        toplot[count]=[str(j)+'x'+str(k)]
+                    graph.remove(l)
+    count+=1
+
+print "Low level regeions: "+str(toplot)
+fname=raw_input("\nName of output file (avoid extension): ")
+myfile=open(fname+".txt","w")
+for i in toplot:
+    for j in toplot[i]:
+        myfile.write(str(i)+","+str(int(j[0])-1)+","+str(int(j[2])-1)+","+str(int(j[0]))+","+str(int(j[2]))+"\n")
+
+
+"""
+toplot={}
+prevt=graph[0][1]
+count=0
+for i in graph:
+    if i[1]==0:
+        try:
+            toplot[count+1].append(i[0])
+        except:
+            toplot[count+1]=[i[0]]
+        continue
+    if prevt-i[1]>1:
+        count+=1
+    try:
+            toplot[count].append(i[0])
+    except:
+            toplot[count]=[i[0]]
+    prevt=i[1]
+"""
