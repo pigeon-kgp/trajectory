@@ -1,0 +1,22 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+run the following line: 
+python2 map_matcher.py "host=10.14.90.158 port=5432 dbname=road_network user=postgres  password=postgres " ROAD_TABLE_NAME < 366_short.txt
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+osm2pgrouting --f base.osm --conf /usr/share/osm2pgrouting/mapconfig.xml --dbname road_network --username OM --password OM --clean
+
+\q - quit
+\dt - table
+
+osm2pgrouting --f base.osm --conf /usr/share/osm2pgrouting/mapconfig.xml --dbname road_network --username postgres --password OM --clean
+
+/etc/postgresql/9.5
+
+
+python2 map_matcher.py "host=localhost port=5432 dbname=road_network user=postgres  password=postgres " ROAD_TABLE_NAME < 366_short.txt
+10.14.90.158
+
+ALTER USER "postgres" WITH PASSWORD 'postgres';
+sudo service postgresql restart

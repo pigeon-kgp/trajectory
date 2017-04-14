@@ -1,0 +1,48 @@
+------------------------------------------------
+
+# OSM Map integration -- done
+
+# Plotting gps traces as markers -- done
+
+# file upload -- done
+
+# Map Centre updated to beijing -- done
+
+# Basic Bootstrap design -- done
+
+------------------------------------------------
+
+Converting .txt to .json
+
+-----------------------------------------------
+
+Plotting polylines instead of markers
+
+------------------------------------------------
+
+Creating 3 Subsections : Feature 1 , 2 & 3
+
+Feature 1 :
+Create Dropdownlist For Inputs
+Plot Input data as Polylines
+Plot Output data as Bounding box
+Diffrent Color for each plotting
+
+Feature 2 : 
+Radio Button for each Range eg. Range 1, Range 2 and so on...
+Plot range data as polylines with different colors
+
+
+--------------------------------------------------
+
+Feature 3 :
+Upload json as Input
+Plot on map as polylines in Green Color
+Upload json as Output
+Plot on map as polylines in Red Color
+[File Uploading part is commented as of now]
+---------------------------------------------------
+
+
+
+

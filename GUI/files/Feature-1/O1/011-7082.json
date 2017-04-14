@@ -1,0 +1,6 @@
+markers=[
+{"name": "Beijing","url": "https://en.wikipedia.org/wiki/Beijing","lat":"40.07303","lng":"116.07066"},
+{"name": "Beijing","url": "https://en.wikipedia.org/wiki/Beijing","lat":"39.57340","lng":"116.05281"},
+{"name": "Beijing","url": "https://en.wikipedia.org/wiki/Beijing","lat":"39.56422","lng":"116.59229"},
+{"name": "Beijing","url": "https://en.wikipedia.org/wiki/Beijing","lat":"40.06392","lng":"116.55857"},
+];

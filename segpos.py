@@ -27,7 +27,7 @@ for folder in folderlist:
     
 numnow=0
 prec=1
-precision=2
+precision=6
 for folder in folderlist:
   os.chdir(path+"/"+folder)
   filelist=os.listdir(os.getcwd())
@@ -76,6 +76,7 @@ for folder in folderlist:
       	#print(str(templat/count)+"  "+str(templon/count)+" "+str(lat)+" "+str(lon))
       	#print "dist: "+str(dist)
       	if (dist<thr**2):
+                
       		taxi[taxino].append(lat)
       		taxi[taxino].append(lon)
       		#print("if")
@@ -90,5 +91,5 @@ for folder in folderlist:
       	taxi[taxino]=[[day,month,year,hr,mins,sec],lat,lon]
       	#print("oexceptf")
   #os.chdir(path)
-print("This algorithmn successfully compressed the raw data to "+str(counter)+" from "+str(pumbalines)+" units.\n% compression: "+str(float(pumbalines-counter)*100/pumbalines))
+
      

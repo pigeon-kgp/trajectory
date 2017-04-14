@@ -1,0 +1,723 @@
+
+
+         Measurement ID: 0
+             Coordinate: 116.453530 39.907320
+    Matche d coordinate: 116.453523 39.907302
+        Matched edge ID: 38649
+Location along the edge: 0.90
+               Distance: 2.03 meters
+
+         Measurement ID: 1
+             Coordinate: 116.453480 39.907290
+    Matche d coordinate: 116.453489 39.907315
+        Matched edge ID: 38649
+Location along the edge: 0.94
+               Distance: 2.82 meters
+
+         Measurement ID: 2
+             Coordinate: 116.453340 39.907250
+    Matche d coordinate: 116.453332 39.907320
+        Matched edge ID: 14746
+Location along the edge: 0.13
+               Distance: 7.75 meters
+
+         Measurement ID: 3
+             Coordinate: 116.453300 39.907220
+    Matche d coordinate: 116.453288 39.907314
+        Matched edge ID: 14746
+Location along the edge: 0.18
+               Distance: 10.50 meters
+
+         Measurement ID: 4
+             Coordinate: 116.453270 39.907220
+    Matche d coordinate: 116.453265 39.907312
+        Matched edge ID: 14746
+Location along the edge: 0.20
+               Distance: 10.20 meters
+
+         Measurement ID: 5
+             Coordinate: 116.453200 39.907250
+    Matche d coordinate: 116.453197 39.907308
+        Matched edge ID: 14746
+Location along the edge: 0.28
+               Distance: 6.43 meters
+
+         Measurement ID: 6
+             Coordinate: 116.453090 39.907600
+    Matche d coordinate: 116.453089 39.907648
+        Matched edge ID: 75128
+Location along the edge: 0.84
+               Distance: 5.31 meters
+
+         Measurement ID: 7
+             Coordinate: 116.453000 39.907700
+    Matche d coordinate: 116.453001 39.907646
+        Matched edge ID: 75128
+Location along the edge: 0.85
+               Distance: 5.99 meters
+
+         Measurement ID: 8
+             Coordinate: 116.452810 39.907600
+    Matche d coordinate: 116.452809 39.907642
+        Matched edge ID: 75128
+Location along the edge: 0.88
+               Distance: 4.68 meters
+
+         Measurement ID: 9
+             Coordinate: 116.452710 39.907670
+    Matche d coordinate: 116.452711 39.907640
+        Matched edge ID: 75128
+Location along the edge: 0.89
+               Distance: 3.32 meters
+
+         Measurement ID: 10
+             Coordinate: 116.452620 39.907710
+    Matche d coordinate: 116.452621 39.907638
+        Matched edge ID: 75128
+Location along the edge: 0.90
+               Distance: 7.96 meters
+
+         Measurement ID: 11
+             Coordinate: 116.452440 39.907580
+    Matche d coordinate: 116.452439 39.907635
+        Matched edge ID: 75128
+Location along the edge: 0.92
+               Distance: 6.05 meters
+
+         Measurement ID: 12
+             Coordinate: 116.452300 39.907530
+    Matche d coordinate: 116.452298 39.907632
+        Matched edge ID: 75128
+Location along the edge: 0.93
+               Distance: 11.29 meters
+
+         Measurement ID: 13
+             Coordinate: 116.452010 39.907580
+    Matche d coordinate: 116.452009 39.907626
+        Matched edge ID: 75128
+Location along the edge: 0.97
+               Distance: 5.08 meters
+
+         Measurement ID: 14
+             Coordinate: 116.451760 39.907660
+    Matche d coordinate: 116.451761 39.907621
+        Matched edge ID: 75128
+Location along the edge: 0.99
+               Distance: 4.37 meters
+
+         Measurement ID: 15
+             Coordinate: 116.451630 39.907630
+    Matche d coordinate: 116.451630 39.907620
+        Matched edge ID: 28432
+Location along the edge: 0.61
+               Distance: 1.11 meters
+
+         Measurement ID: 16
+             Coordinate: 116.451590 39.907540
+    Matche d coordinate: 116.451582 39.907540
+        Matched edge ID: 67700
+Location along the edge: 0.22
+               Distance: 0.71 meters
+
+         Measurement ID: 17
+             Coordinate: 116.451480 39.907500
+    Matche d coordinate: 116.451581 39.907498
+        Matched edge ID: 67700
+Location along the edge: 0.34
+               Distance: 8.61 meters
+
+         Measurement ID: 18
+             Coordinate: 116.451350 39.907420
+    Matche d coordinate: 116.451352 39.907327
+        Matched edge ID: 90829
+Location along the edge: 0.11
+               Distance: 10.32 meters
+
+         Measurement ID: 19
+             Coordinate: 116.451250 39.907360
+    Matche d coordinate: 116.451251 39.907325
+        Matched edge ID: 90829
+Location along the edge: 0.16
+               Distance: 3.87 meters
+
+         Measurement ID: 20
+             Coordinate: 116.451110 39.907330
+    Matche d coordinate: 116.451110 39.907323
+        Matched edge ID: 90829
+Location along the edge: 0.23
+               Distance: 0.82 meters
+
+         Measurement ID: 21
+             Coordinate: 116.450860 39.907330
+    Matche d coordinate: 116.450860 39.907318
+        Matched edge ID: 90829
+Location along the edge: 0.35
+               Distance: 1.33 meters
+
+         Measurement ID: 22
+             Coordinate: 116.450410 39.907430
+    Matche d coordinate: 116.450353 39.907486
+        Matched edge ID: 66962
+Location along the edge: 0.36
+               Distance: 7.62 meters
+
+         Measurement ID: 23
+             Coordinate: 116.450200 39.907430
+    Matche d coordinate: 116.450200 39.907430
+        Matched edge ID: 66962
+Location along the edge: 0.49
+               Distance: 0.01 meters
+
+         Measurement ID: 24
+             Coordinate: 116.450130 39.907400
+    Matche d coordinate: 116.450131 39.907431
+        Matched edge ID: 66962
+Location along the edge: 0.54
+               Distance: 3.50 meters
+
+         Measurement ID: 25
+             Coordinate: 116.450050 39.907400
+    Matche d coordinate: 116.450051 39.907433
+        Matched edge ID: 66962
+Location along the edge: 0.60
+               Distance: 3.69 meters
+
+         Measurement ID: 26
+             Coordinate: 116.450080 39.907330
+    Matche d coordinate: 116.450080 39.907304
+        Matched edge ID: 90829
+Location along the edge: 0.72
+               Distance: 2.92 meters
+
+         Measurement ID: 27
+             Coordinate: 116.450000 39.907320
+    Matche d coordinate: 116.450000 39.907302
+        Matched edge ID: 90829
+Location along the edge: 0.76
+               Distance: 1.97 meters
+
+         Measurement ID: 28
+             Coordinate: 116.449970 39.907310
+    Matche d coordinate: 116.449970 39.907302
+        Matched edge ID: 90829
+Location along the edge: 0.78
+               Distance: 0.92 meters
+
+         Measurement ID: 29
+             Coordinate: 116.449980 39.907270
+    Matche d coordinate: 116.449980 39.907260
+        Matched edge ID: 38096
+Location along the edge: 0.77
+               Distance: 1.14 meters
+
+         Measurement ID: 30
+             Coordinate: 116.449930 39.907260
+    Matche d coordinate: 116.449930 39.907260
+        Matched edge ID: 38096
+Location along the edge: 0.79
+               Distance: 0.03 meters
+
+         Measurement ID: 31
+             Coordinate: 116.449810 39.907220
+    Matche d coordinate: 116.449810 39.907260
+        Matched edge ID: 38096
+Location along the edge: 0.85
+               Distance: 4.41 meters
+
+         Measurement ID: 32
+             Coordinate: 116.449690 39.907240
+    Matche d coordinate: 116.449690 39.907260
+        Matched edge ID: 38096
+Location along the edge: 0.91
+               Distance: 2.18 meters
+
+         Measurement ID: 33
+             Coordinate: 116.449630 39.907240
+    Matche d coordinate: 116.449630 39.907260
+        Matched edge ID: 38096
+Location along the edge: 0.94
+               Distance: 2.18 meters
+
+         Measurement ID: 34
+             Coordinate: 116.449550 39.907260
+    Matche d coordinate: 116.449550 39.907260
+        Matched edge ID: 38096
+Location along the edge: 0.98
+               Distance: 0.04 meters
+
+         Measurement ID: 35
+             Coordinate: 116.449520 39.907290
+    Matche d coordinate: 116.449520 39.907293
+        Matched edge ID: 90829
+Location along the edge: 0.99
+               Distance: 0.38 meters
+
+         Measurement ID: 36
+             Coordinate: 116.449420 39.907330
+    Matche d coordinate: 116.449420 39.907293
+        Matched edge ID: 90830
+Location along the edge: 0.10
+               Distance: 4.09 meters
+
+         Measurement ID: 37
+             Coordinate: 116.449270 39.907360
+    Matche d coordinate: 116.449270 39.907293
+        Matched edge ID: 90830
+Location along the edge: 0.27
+               Distance: 7.42 meters
+
+         Measurement ID: 38
+             Coordinate: 116.449020 39.907470
+    Matche d coordinate: 116.449020 39.907452
+        Matched edge ID: 62600
+Location along the edge: 0.88
+               Distance: 2.05 meters
+
+         Measurement ID: 39
+             Coordinate: 116.448720 39.907540
+    Matche d coordinate: 116.448719 39.907454
+        Matched edge ID: 62600
+Location along the edge: 0.81
+               Distance: 9.53 meters
+
+         Measurement ID: 40
+             Coordinate: 116.448350 39.907550
+    Matche d coordinate: 116.448349 39.907457
+        Matched edge ID: 62600
+Location along the edge: 0.72
+               Distance: 10.29 meters
+
+         Measurement ID: 41
+             Coordinate: 116.447850 39.907590
+    Matche d coordinate: 116.447849 39.907462
+        Matched edge ID: 62600
+Location along the edge: 0.60
+               Distance: 14.26 meters
+
+         Measurement ID: 42
+             Coordinate: 116.447500 39.907420
+    Matche d coordinate: 116.447500 39.907465
+        Matched edge ID: 62600
+Location along the edge: 0.52
+               Distance: 4.95 meters
+
+         Measurement ID: 43
+             Coordinate: 116.447060 39.907360
+    Matche d coordinate: 116.447060 39.907297
+        Matched edge ID: 21079
+Location along the edge: 0.39
+               Distance: 6.97 meters
+
+         Measurement ID: 44
+             Coordinate: 116.445900 39.907360
+    Matche d coordinate: 116.445900 39.907302
+        Matched edge ID: 21079
+Location along the edge: 0.80
+               Distance: 6.48 meters
+
+         Measurement ID: 45
+             Coordinate: 116.445430 39.907350
+    Matche d coordinate: 116.445430 39.907305
+        Matched edge ID: 21079
+Location along the edge: 0.97
+               Distance: 4.95 meters
+
+         Measurement ID: 46
+             Coordinate: 116.445050 39.907380
+    Matche d coordinate: 116.445049 39.907308
+        Matched edge ID: 21080
+Location along the edge: 0.27
+               Distance: 8.05 meters
+
+         Measurement ID: 47
+             Coordinate: 116.444600 39.907400
+    Matche d coordinate: 116.444597 39.907317
+        Matched edge ID: 21080
+Location along the edge: 0.68
+               Distance: 9.13 meters
+
+         Measurement ID: 48
+             Coordinate: 116.444440 39.907460
+    Matche d coordinate: 116.444441 39.907500
+        Matched edge ID: 20267
+Location along the edge: 0.28
+               Distance: 4.48 meters
+
+         Measurement ID: 49
+             Coordinate: 116.444440 39.907730
+    Matche d coordinate: 116.444388 39.907730
+        Matched edge ID: 62596
+Location along the edge: 0.34
+               Distance: 4.47 meters
+
+         Measurement ID: 50
+             Coordinate: 116.444420 39.908160
+    Matche d coordinate: 116.444420 39.908173
+        Matched edge ID: 39258
+Location along the edge: 0.24
+               Distance: 1.49 meters
+
+         Measurement ID: 51
+             Coordinate: 116.444400 39.908760
+    Matche d coordinate: 116.444390 39.908760
+        Matched edge ID: 39253
+Location along the edge: 0.29
+               Distance: 0.83 meters
+
+         Measurement ID: 52
+             Coordinate: 116.444380 39.909320
+    Matche d coordinate: 116.444392 39.909320
+        Matched edge ID: 39253
+Location along the edge: 0.57
+               Distance: 1.00 meters
+
+         Measurement ID: 53
+             Coordinate: 116.444360 39.909870
+    Matche d coordinate: 116.444393 39.909870
+        Matched edge ID: 39253
+Location along the edge: 0.84
+               Distance: 2.82 meters
+
+         Measurement ID: 54
+             Coordinate: 116.444340 39.910520
+    Matche d coordinate: 116.444395 39.910520
+        Matched edge ID: 15949
+Location along the edge: 0.19
+               Distance: 4.67 meters
+
+         Measurement ID: 55
+             Coordinate: 116.444350 39.911100
+    Matche d coordinate: 116.444396 39.911100
+        Matched edge ID: 15949
+Location along the edge: 0.51
+               Distance: 3.94 meters
+
+         Measurement ID: 56
+             Coordinate: 116.444350 39.911100
+    Matche d coordinate: 116.444396 39.911100
+        Matched edge ID: 15949
+Location along the edge: 0.51
+               Distance: 3.94 meters
+
+         Measurement ID: 57
+             Coordinate: 116.444390 39.911440
+    Matche d coordinate: 116.444397 39.911440
+        Matched edge ID: 15949
+Location along the edge: 0.70
+               Distance: 0.59 meters
+
+         Measurement ID: 58
+             Coordinate: 116.444390 39.911440
+    Matche d coordinate: 116.444397 39.911440
+        Matched edge ID: 15949
+Location along the edge: 0.70
+               Distance: 0.59 meters
+
+         Measurement ID: 59
+             Coordinate: 116.444440 39.911530
+    Matche d coordinate: 116.444397 39.911530
+        Matched edge ID: 15949
+Location along the edge: 0.76
+               Distance: 3.67 meters
+
+         Measurement ID: 60
+             Coordinate: 116.444440 39.911530
+    Matche d coordinate: 116.444397 39.911530
+        Matched edge ID: 15949
+Location along the edge: 0.76
+               Distance: 3.67 meters
+
+         Measurement ID: 61
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 62
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 63
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 64
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 65
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 66
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 67
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 68
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 69
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 70
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 71
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 72
+             Coordinate: 116.444490 39.911520
+    Matche d coordinate: 116.444397 39.911520
+        Matched edge ID: 15949
+Location along the edge: 0.75
+               Distance: 7.94 meters
+
+         Measurement ID: 73
+             Coordinate: 116.444500 39.911530
+    Matche d coordinate: 116.444397 39.911530
+        Matched edge ID: 15949
+Location along the edge: 0.76
+               Distance: 8.80 meters
+
+         Measurement ID: 74
+             Coordinate: 116.444440 39.911650
+    Matche d coordinate: 116.444397 39.911650
+        Matched edge ID: 15949
+Location along the edge: 0.82
+               Distance: 3.64 meters
+
+         Measurement ID: 75
+             Coordinate: 116.444460 39.911940
+    Matche d coordinate: 116.444460 39.911967
+        Matched edge ID: 60249
+Location along the edge: 0.02
+               Distance: 3.01 meters
+
+         Measurement ID: 76
+             Coordinate: 116.444400 39.912430
+    Matche d coordinate: 116.444396 39.912430
+        Matched edge ID: 20403
+Location along the edge: 0.81
+               Distance: 0.32 meters
+
+         Measurement ID: 77
+             Coordinate: 116.444380 39.913030
+    Matche d coordinate: 116.444392 39.913030
+        Matched edge ID: 20403
+Location along the edge: 0.57
+               Distance: 1.04 meters
+
+         Measurement ID: 78
+             Coordinate: 116.444410 39.913700
+    Matche d coordinate: 116.444388 39.913700
+        Matched edge ID: 20403
+Location along the edge: 0.29
+               Distance: 1.91 meters
+
+         Measurement ID: 79
+             Coordinate: 116.444390 39.914480
+    Matche d coordinate: 116.444383 39.914480
+        Matched edge ID: 43633
+Location along the edge: 0.88
+               Distance: 0.60 meters
+
+         Measurement ID: 80
+             Coordinate: 116.444430 39.915850
+    Matche d coordinate: 116.444388 39.915850
+        Matched edge ID: 20401
+Location along the edge: 0.92
+               Distance: 3.63 meters
+
+         Measurement ID: 81
+             Coordinate: 116.444420 39.915980
+    Matche d coordinate: 116.444389 39.915980
+        Matched edge ID: 20401
+Location along the edge: 0.68
+               Distance: 2.68 meters
+
+         Measurement ID: 82
+             Coordinate: 116.444390 39.915910
+    Matche d coordinate: 116.444388 39.915910
+        Matched edge ID: 20401
+Location along the edge: 0.81
+               Distance: 0.17 meters
+
+         Measurement ID: 83
+             Coordinate: 116.444390 39.915900
+    Matche d coordinate: 116.444388 39.915900
+        Matched edge ID: 20401
+Location along the edge: 0.83
+               Distance: 0.18 meters
+
+         Measurement ID: 84
+             Coordinate: 116.444390 39.915900
+    Matche d coordinate: 116.444388 39.915900
+        Matched edge ID: 20401
+Location along the edge: 0.83
+               Distance: 0.18 meters
+
+         Measurement ID: 85
+             Coordinate: 116.444380 39.915890
+    Matche d coordinate: 116.444388 39.915890
+        Matched edge ID: 20401
+Location along the edge: 0.85
+               Distance: 0.67 meters
+
+         Measurement ID: 86
+             Coordinate: 116.444360 39.915880
+    Matche d coordinate: 116.444388 39.915880
+        Matched edge ID: 20401
+Location along the edge: 0.86
+               Distance: 2.37 meters
+
+         Measurement ID: 87
+             Coordinate: 116.444350 39.915880
+    Matche d coordinate: 116.444388 39.915880
+        Matched edge ID: 20401
+Location along the edge: 0.86
+               Distance: 3.23 meters
+
+         Measurement ID: 88
+             Coordinate: 116.444350 39.915880
+    Matche d coordinate: 116.444388 39.915880
+        Matched edge ID: 20401
+Location along the edge: 0.86
+               Distance: 3.23 meters
+
+         Measurement ID: 89
+             Coordinate: 116.444370 39.915970
+    Matche d coordinate: 116.444389 39.915970
+        Matched edge ID: 20401
+Location along the edge: 0.70
+               Distance: 1.59 meters
+
+         Measurement ID: 90
+             Coordinate: 116.444380 39.916290
+    Matche d coordinate: 116.444391 39.916290
+        Matched edge ID: 20401
+Location along the edge: 0.12
+               Distance: 0.97 meters
+
+         Measurement ID: 91
+             Coordinate: 116.444400 39.916690
+    Matche d coordinate: 116.444395 39.916690
+        Matched edge ID: 43631
+Location along the edge: 0.71
+               Distance: 0.43 meters
+
+         Measurement ID: 92
+             Coordinate: 116.444460 39.917090
+    Matche d coordinate: 116.444398 39.917091
+        Matched edge ID: 43631
+Location along the edge: 0.35
+               Distance: 5.26 meters
+
+         Measurement ID: 93
+             Coordinate: 116.444600 39.917400
+    Matche d coordinate: 116.444401 39.917402
+        Matched edge ID: 43631
+Location along the edge: 0.08
+               Distance: 17.00 meters
+
+         Measurement ID: 94
+             Coordinate: 116.444720 39.917700
+    Matche d coordinate: 116.444718 39.917930
+        Matched edge ID: 75120
+Location along the edge: 0.80
+               Distance: 25.54 meters
+
+         Measurement ID: 95
+             Coordinate: 116.444810 39.917740
+    Matche d coordinate: 116.444808 39.917931
+        Matched edge ID: 75120
+Location along the edge: 0.74
+               Distance: 21.20 meters
+
+         Measurement ID: 96
+             Coordinate: 116.444960 39.917690
+    Matche d coordinate: 116.444957 39.917932
+        Matched edge ID: 75120
+Location along the edge: 0.64
+               Distance: 26.92 meters
+
+         Measurement ID: 97
+             Coordinate: 116.445140 39.917740
+    Matche d coordinate: 116.445138 39.917934
+        Matched edge ID: 75120
+Location along the edge: 0.53
+               Distance: 21.58 meters
+
+         Measurement ID: 98
+             Coordinate: 116.445360 39.917760
+    Matche d coordinate: 116.445358 39.917937
+        Matched edge ID: 75120
+Location along the edge: 0.39
+               Distance: 19.62 meters
+
+         Measurement ID: 99
+             Coordinate: 116.445800 39.917900
+    Matche d coordinate: 116.445800 39.917941
+        Matched edge ID: 75120
+Location along the edge: 0.10
+               Distance: 4.59 meters
+
+         Measurement ID: 100
+             Coordinate: 116.446030 39.917750
+    Matche d coordinate: 116.445964 39.917748
+        Matched edge ID: 62225
+Location along the edge: 0.91
+               Distance: 5.69 meters
+
+         Measurement ID: 101
+             Coordinate: 116.445980 39.917780
+    Matche d coordinate: 116.445963 39.917780
+        Matched edge ID: 62225
+Location along the edge: 0.92
+               Distance: 1.47 meters
+
+         Measurement ID: 102
+             Coordinate: 116.446250 39.917520
+    Matche d coordinate: 116.445969 39.917514
+        Matched edge ID: 62225
+Location along the edge: 0.80
+               Distance: 24.05 meters
+

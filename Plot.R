@@ -49,7 +49,7 @@ processFile = function(filepath) {
   
   close(con)
 }
-processFile("part.txt")
+processFile("aba.txt")
 
 
 
