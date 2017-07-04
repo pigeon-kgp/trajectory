@@ -22,7 +22,7 @@ for item in itemlist:
 	dist=0
 	for lane in lanes:
 		dist+=float(lane.attributes['length'].value)
-	output[idno]={"from":junctions[fr],"to":junctions[to],"distance":float(dist),"traffic":random.randrange(0,5)}
+	output[idno]={"from":junctions[fr],"to":junctions[to],"distance":float(dist),"traffic":random.randrange(1,6)}
 # print output
 import json
 string=json.dumps(output, indent=2)
