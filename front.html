@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Trajectory generator</title>
+    </head>
+    <body>
+    <h1> Trajectory generator </h1>
+
+    <form action="" method="post">
+        {{ form.csrf }}
+        <div class="input submit">
+            <input type="submit" name="btn" value="Randomise traffic" />
+        </div>
+    </form>
+
+    <div class="container" align="left">
+        <a href="/return-files/" target="blank"><button class='btn btn-default'>Graph info</button></a>
+    </div>
+    <br><br>
+        <form action="" method="post">
+            {{ form.csrf }}
+ 
+            <div class="input text">
+                {{ form.from_edge.label }} {{ form.from_edge }}
+            </div>
+            <br>
+            <div class="input text">
+                {{ form.to_edge.label }} {{ form.to_edge }}
+            </div>
+            <br>
+            <div class="input submit">
+                <input type="submit" name="btn" value="Submit" />
+            </div>
+        </form>
+        <br>
+        {% with messages = get_flashed_messages() %}
+               {% if messages %}
+                  {% for message in messages %}
+                     {{ message }}
+                  {% endfor %}
+               {% endif %}
+            {% endwith %}
+    </body>
+</html>

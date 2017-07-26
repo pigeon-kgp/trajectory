@@ -1,6 +1,7 @@
 import random
 from xml.dom import minidom
-xmldoc = minidom.parse('sumo/map.net.xml')
+import os
+xmldoc = minidom.parse('/home/ubuntu/Desktop/trajectory_clone/Vis/sumo/map.net.xml')
 junclist= xmldoc.getElementsByTagName('junction')
 junctions={}
 for junc in junclist:
@@ -27,5 +28,6 @@ for item in itemlist:
 import json
 string=json.dumps(output, indent=2)
 print string
-f=open("out.json","w")
+f=open("/home/ubuntu/Desktop/trajectory_clone/Vis/out.json","w")
 f.write(string)
+os.system('rm /home/ubuntu/Desktop/trajectory_clone/Vis/tables/*')
