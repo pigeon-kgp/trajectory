@@ -1,16 +1,36 @@
------
-WORK IN PROGRESS
------
+# WORK IN PROGRESS
 
-This project is not yet ready for public release.
+## Requirements for path planning
+* Python 2
+* SUMO
 
-trajectory Planning
+------------------------
 
-//place data in the same folder as the clone of this
+* Generate `.net.xml` file from `.osm` by issuing  
+`netconvert --osm-files <osm file name>.osm -o <output file name>.net.xml`
 
-now user has to enter full path
+* Convert the `.net.xml` files to `.json` with randomly generated traffic by  
+`cd Vis && python Vis/net_to_json.py` making sure the path to the `.net.xml` file is adjusted in the code.  
+In subsequent steps, the edge id may be referred from `Vis/out.json`.
 
-Supports only python2
+* Generate routing tables for hotspots using  
+`python table_gen.py` making sure the directory has been switched to `Vis`.  
+The edge ids for hotspot would be demanded from `stdin` during execution.
 
-Sample data added
+* Generate path by issuing  
+`python path_predict.py`  
+The edge ids for source and destinantion would be demanded from `stdin` during execution.  
+The path would be generated in `out_path`.  
 
+A Flask based model for the path planner is present as `~/back.py`.
+
+-----------------------------
+
+## Requirements for data segregation
+* Python 2
+* Postgres
+* psycopg2
+
+------------------------
+
+>Details to be updated.	
