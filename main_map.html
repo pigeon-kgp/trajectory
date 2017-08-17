@@ -1,0 +1,154 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/leaflet.css') }}">
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/Control.Geocoder.css') }}">
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main_map.css') }}">
+
+	  <script src="{{url_for('static', filename='js/leaflet.js')}}"></script>
+	  <script src="{{url_for('static', filename='js/Control.Geocoder.js')}}"></script>
+	<style>
+	#map {
+		position: absolute;
+		display: inline-block;
+		height: 650px;
+		width: 1190px;
+	    margin-top: 10px;
+	    margin-left: 95px;
+		z-index: 0;
+	}	
+#input {
+    position: absolute;
+    display: inline-block;
+    height: 700px;
+    width: 180px;
+    margin-top: 0px;
+    margin-left: 10px;
+
+background-image: linear-gradient(to left, red 30%,yellow 30%,white 0%);
+    z-index: 2;
+}  
+</style>
+</head>
+<body>
+<div id = "input">
+<div class="markers-color-palette">
+    <img src="static/css/blue-marker.png" class="marker-colors blueIcon" />
+    Start
+    <br>
+    <img src="static/css/red-marker.png" class="marker-colors redIcon" />
+    End
+
+<br><br><br>
+{% with messages = get_flashed_messages() %}
+       {% if messages %}
+          {% for message in messages %}
+             {{ message }}
+          {% endfor %}
+       {% endif %}
+    {% endwith %}
+</div>
+
+
+	<form action = "" method = "POST">
+		
+		<p>Source       <input id="Src" type="text" name="Src" /></p>
+		<p>Destination  <input id="Dest" type="text" name="Dest" /></p>
+		<div class="input submit">
+		    <input type="submit" name="btn" value="Submit" />
+		</div>
+		
+	</form> 
+	<br><br><br>
+	<form action="" method="post">
+	    {{ form.csrf }}
+
+	    <div class="input submit">
+	        <input type="submit" name="btn" value="Randomise traffic" />
+	    </div>
+
+	</form>
+</div>
+
+<div id="map">
+    <script type="text/javascript">
+
+    var CustomIcon = L.Icon.extend({
+        options: {
+            iconSize: [38, 38]
+        }
+	});
+    var redIcon = new CustomIcon({ iconUrl: 'static/css/red-marker.png' }),
+		blueIcon = new CustomIcon({ iconUrl: 'static/css/blue-marker.png' })
+ 	// var redIcon = new ({ iconUrl: "{{url_for('static', filename='css/red-marker.png')}}" }),
+		// blueIcon = new CustomIcon({ iconUrl: "{{url_for('static', filename='css/blue-marker.png')}}" });
+
+	var initialBounds = L.latLngBounds(L.latLng(22.56, 88.35), L.latLng(22.58, 88.37));
+	var map = L.map('map').fitBounds(initialBounds);
+	// var map = L.map("map").fitBounds([
+	//     [22, 90],
+	//     [10, 100]
+	// ]);
+
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	var marker = L.marker([22.5736,88.3619], { icon:blueIcon,
+	    draggable: true
+	}).addTo(map).on('dragend', onDragEnd);
+
+	var marker_f = L.marker([22.5726,88.3639], {icon:redIcon,
+	    draggable: true
+	}).addTo(map).on('dragend', onDragEnd_f);
+
+	var geocoder = L.Control.geocoder().addTo(map),
+	    Src = document.getElementById('Src'),
+	    Dest = document.getElementById('Dest');
+
+	geocoder.markGeocode = function (result) {
+	    var latlng = result.center;
+	    var latlng_f = result.center;
+
+	    L.marker(latlng, {
+	        draggable: true
+	    }).addTo(map).	   
+	    L.marker(latlng_f, {
+	        draggable: true
+	    }).addTo(map).
+	    on('dragend', onDragEnd).
+	    on('dragend', onDragEnd_f).
+	    // bindPopup(result.html).
+	    openPopup();
+
+	    displayLatLng(latlng);
+	    displayLatLng_f(latlng_f);
+	};
+
+	var latlng,latlng_f;
+	function onDragEnd(event) {
+	    latlng = event.target.getLatLng();
+	    displayLatLng(latlng);
+	}	
+	function onDragEnd_f(event) {
+	    latlng_f = event.target.getLatLng();
+	    displayLatLng_f(latlng_f);
+	}
+
+	function displayLatLng(latlng) {
+	    Src.value = latlng.lng+','+latlng.lat;
+	}
+	function displayLatLng_f(latlng_f) {
+	    Dest.value = latlng_f.lng+','+latlng_f.lat;
+	}
+	</script>
+</div>
+
+
+
+</body>
+</html>

@@ -35,3 +35,5 @@ Vis.tar.gz
 output.txt
 out.json
 *~
+map/*
+pyproj-1.9.5.1/*

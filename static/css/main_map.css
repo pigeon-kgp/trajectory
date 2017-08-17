@@ -1,0 +1,56 @@
+
+#randomisetraffic {
+    position: absolute;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    margin-top: 100px;
+    margin-left: 50px;
+    z-index: 2;
+}
+
+
+.map-menu {
+    position: absolute;
+    display: inline-block;
+    height: 400px;
+    width: 50px;
+    background-color: rgb(250, 245, 221);
+    margin-left: 5px;
+}
+
+.marker-selector-icon {
+    width: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10;
+    position: absolute;
+    cursor: pointer;
+}
+
+#draggable {
+    position: absolute;
+    width: 30px;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.marker-colors {
+    width: 30px;
+    margin: 5px;
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: rgb(247, 245, 197) !important;
+    border: 2px solid rgb(39, 175, 93) !important;
+    border-radius: 60px !important;
+}
+
+.leaflet-popup-tip {
+    display: none !important;
+}

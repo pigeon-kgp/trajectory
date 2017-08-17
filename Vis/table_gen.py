@@ -28,7 +28,7 @@ for dest in dest_edges:
     for each in data:
         count+=1
         os.system('clear')
-        print(str(count*100.0/total_edge)+" % complete")
+        print(str(count*100.0/total_edge)+" %  complete")
         if each==dest: continue
         start_edge=each
         end_edge=dest

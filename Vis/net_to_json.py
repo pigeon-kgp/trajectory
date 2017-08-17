@@ -1,6 +1,19 @@
 import random
 from xml.dom import minidom
 import os
+
+os.environ['SUMO_HOME'] = "/usr/share/sumo"
+
+import sys
+if 'SUMO_HOME' in os.environ:
+ tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
+ sys.path.append(tools)
+else:   
+ sys.exit("please declare environment variable 'SUMO_HOME'")
+import sumolib
+
+net = sumolib.net.readNet('sumo/map.net.xml')
+
 xmldoc = minidom.parse('/home/ubuntu/Desktop/trajectory_clone/Vis/sumo/map.net.xml')
 junclist= xmldoc.getElementsByTagName('junction')
 junctions={}
@@ -23,7 +36,7 @@ for item in itemlist:
 	dist=0
 	for lane in lanes:
 		dist+=float(lane.attributes['length'].value)
-	output[idno]={"from":junctions[fr],"to":junctions[to],"distance":float(dist),"traffic":random.randrange(1,6)}
+	output[idno]={"from":net.convertXY2LonLat(junctions[fr][0],junctions[fr][1]),"to":net.convertXY2LonLat(junctions[to][0],junctions[to][1]),"distance":float(dist),"traffic":random.randrange(1,6)}
 # print output
 import json
 string=json.dumps(output, indent=2)
