@@ -24,20 +24,34 @@ while(1):
         foo.write(str(source)+"\n")
         if source==destin: break
     else:
-        f=open("temp_trip","w")
-        str_to_write="<trips><trip id  = \"0\" depart=\"0.00\" from=\""+str(source.split('\"')[0])+"\" to =\""+str(destin.split('\"')[0])+"\" /> </trips>"
-        f.write(str_to_write)
-        try:
-            f=open("/home/ubuntu/Desktop/trajectory_clone/Vis/tables/"+str(source.split('\"')[0]),"a")
-        except:
-            f=open("/home/ubuntu/Desktop/trajectory_clone/Vis/tables/"+str(source.split('\"')[0]),"w")
-        os.system('duarouter --trip-files temp_trip --net-file /home/ubuntu/Desktop/trajectory_clone/Vis/sumo/map.net.xml --weight-files /home/ubuntu/Desktop/trajectory_clone/Vis/weights --output-file /home/ubuntu/Desktop/trajectory_clone/Vis/result_here.rou.xml ')
+        f=open("/home/ubuntu/Desktop/trajectory_clone/Vis/temp_trip","w")
+        print("source: ",source)
+        print("Destination: ",destin)
+        str_to_write="<trips>\n    <trip id  = \"0\" depart=\"0.00\" from=\""+str(source)+"\" to =\""+str(destin)+"\" />\n</trips>"
+        f.write(str(str_to_write)+"\n")
+        print "abc"
+        os.system('duarouter --trip-files /home/ubuntu/Desktop/trajectory_clone/Vis/temp_trip --net-file /home/ubuntu/Desktop/trajectory_clone/Vis/sumo/map.net.xml --weight-files /home/ubuntu/Desktop/trajectory_clone/Vis/weights --output-file /home/ubuntu/Desktop/trajectory_clone/Vis/result_here.rou.xml')
+        # os.system('duarouter --trip-files temp_trip --net-file /home/ubuntu/Desktop/trajectory_clone/Vis/sumo/map.net.xml --weight-files /home/ubuntu/Desktop/trajectory_clone/Vis/weights --output-file /home/ubuntu/Desktop/trajectory_clone/Vis/result_here.rou.xml ')
         result=open("/home/ubuntu/Desktop/trajectory_clone/Vis/result_here.rou.alt.xml","r")
         all_text=result.read()
-        next_id=(all_text.split('edges'))[1].split(' ')[1]
-        print ("Go to "+str(next_id.split('\"')[0]))
+        next_id=(all_text.split('edges'))[1].split('"/>')[0].split(' ')
+        next_id[0] = next_id[0].split('\"')[1]
+        next_id[-1] = next_id[-1].split('\"')[0]
         foo=open("/home/ubuntu/Desktop/trajectory_clone/Vis/out_path","a")
-        foo.write(str(next_id.split('\"')[0])+"\n")
-        source=next_id.split('\"')[0].split('\n')[0]
-        if source==destin: break
-        f.write(str(destin.split('\"')[0])+": "+str(next_id.split('\"')[0])+"\n")
+        # for next in next_id:
+        print ("next id",next_id)
+        for i in xrange(len(next_id)-1):
+            print ("Go to "+str(next_id[i]))
+            foo.write(str(next_id[i]).split('\"')[0]+"\n")
+            try:
+                f=open("/home/ubuntu/Desktop/trajectory_clone/Vis/tables/"+str(next_id[i].split('\"')[0]),"a")
+            except:
+                f=open("/home/ubuntu/Desktop/trajectory_clone/Vis/tables/"+str(next_id[i].split('\"')[0]),"w")
+            f.write(str(destin.split('\"')[0])+": "+str(next_id[i].split('\"')[0])+"\n")
+            
+        print ("Go to "+str(next_id[-1]))
+        foo.write(str(next_id[-1]).split('\"')[0]+"\n")
+        print ("Go to "+str(destin))
+        foo.write(str(destin).split('\"')[0]+"\n")
+        # source=next_id.split('\"')[0].split('\n')[0]
+        break
