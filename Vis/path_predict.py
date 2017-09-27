@@ -29,7 +29,7 @@ while(1):
         print("Destination: ",destin)
         str_to_write="<trips>\n    <trip id  = \"0\" depart=\"0.00\" from=\""+str(source)+"\" to =\""+str(destin)+"\" />\n</trips>"
         f.write(str(str_to_write)+"\n")
-        print "abc"
+        f.close()
         os.system('duarouter --trip-files /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/temp_trip --net-file /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/sumo/map.net.xml --weight-files /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/weights --output-file /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/result_here.rou.xml')
         # os.system('duarouter --trip-files temp_trip --net-file /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/sumo/map.net.xml --weight-files /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/weights --output-file /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/result_here.rou.xml ')
         result=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/result_here.rou.alt.xml","r")
