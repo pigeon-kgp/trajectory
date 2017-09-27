@@ -18,6 +18,8 @@ while(1):
                 break
     except: pass
     if flag==1:
+        print "source is: "+str(source)
+        print "destination is: "+str(destin)
         source=now_dest[1:].split('\n')[0]
         print("Just go to "+str(source))
         foo=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/out_path","a")
@@ -43,11 +45,15 @@ while(1):
         for i in xrange(len(next_id)-1):
             print ("Go to "+str(next_id[i]))
             foo.write(str(next_id[i]).split('\"')[0]+"\n")
+            alltexthere = ""
             try:
-                f=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/tables/"+str(next_id[i].split('\"')[0]),"a")
+                f=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/tables/"+str(next_id[i].split('\"')[0]),"r+")
+                alltexthere = f.read()
+                f.seek(0,2)
             except:
                 f=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/tables/"+str(next_id[i].split('\"')[0]),"w")
-            f.write(str(destin.split('\"')[0])+": "+str(next_id[i].split('\"')[0])+"\n")
+            if not str(destin.split('\"')[0])+": " in alltexthere:
+                f.write(str(destin.split('\"')[0])+": "+str(next_id[i+1].split('\"')[0])+"\n")
             
         print ("Go to "+str(next_id[-1]))
         foo.write(str(next_id[-1]).split('\"')[0]+"\n")
