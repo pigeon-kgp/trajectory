@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Tue Sep  5 00:50:01 2017 by SUMO duarouter Version 0.19.0
+<!-- generated on Wed Sep 27 19:58:42 2017 by SUMO duarouter Version 0.28.0
 <?xml version="1.0" encoding="UTF-8"?>
 
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo-sim.org/xsd/duarouterConfiguration.xsd">
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
 
     <input>
-        <net-file value="/home/ubuntu/Desktop/trajectory_clone/Vis/sumo/map.net.xml"/>
-        <weight-files value="/home/ubuntu/Desktop/trajectory_clone/Vis/weights"/>
-        <trip-files value="/home/ubuntu/Desktop/trajectory_clone/Vis/temp_trip"/>
+        <net-file value="/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/sumo/map.net.xml"/>
+        <weight-files value="/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/weights"/>
+        <trip-files value="/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/temp_trip"/>
     </input>
 
     <output>
-        <output-file value="/home/ubuntu/Desktop/trajectory_clone/Vis/result_here.rou.xml"/>
+        <output-file value="/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/result_here.rou.xml"/>
     </output>
 
 </configuration>
 -->
 
-<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo-sim.org/xsd/routes_file.xsd"/>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vehicle id="0" depart="0.00">
+        <route edges="102961725 52152366#1 -103230546#5 -103230546#4 -103230546#3 -103230546#2 -103230546#1 -103230546#0 103230523#1 -103594699#5 -103594699#4 -103230602#1 103230601#0 103230538#0 103230538#1 103230538#2"/>
+    </vehicle>
+</routes>
