@@ -1,6 +1,7 @@
 import random
 from xml.dom import minidom
 import os
+import hex
 
 os.environ['SUMO_HOME'] = "/usr/share/sumo"
 
@@ -26,6 +27,7 @@ for junc in junclist:
 	junctions[idno]=[x,y]
 itemlist = xmldoc.getElementsByTagName('edge')
 output={}
+hexmap={}
 for item in itemlist:
 	idno=str(item.attributes['id'].value)
 	try:
@@ -36,11 +38,26 @@ for item in itemlist:
 	dist=0
 	for lane in lanes:
 		dist+=float(lane.attributes['length'].value)
-	output[idno]={"from":net.convertXY2LonLat(junctions[fr][0],junctions[fr][1]),"to":net.convertXY2LonLat(junctions[to][0],junctions[to][1]),"distance":float(dist),"traffic":random.randrange(1,6)}
+	from_lat_lon = net.convertXY2LonLat(junctions[fr][0],junctions[fr][1])
+	to_lat_lon = net.convertXY2LonLat(junctions[to][0],junctions[to][1])
+	hex_here = hex.pixel_to_hex(from_lat_lon,to_lat_lon)
+	try:
+		hexmap[str(hex_here)].append(idno)
+	except:
+		hexmap[str(hex_here)]=[idno]
+	output[idno]={"from":from_lat_lon,"to":to_lat_lon, "hex":hex_here,\
+	"distance":float(dist), "traffic":random.randrange(1,6)}
+	print output[idno]
 # print output
 import json
 string=json.dumps(output, indent=2)
 print string
 f=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/out.json","w")
 f.write(string)
+
+string=json.dumps(hexmap, indent=2)
+print string
+f=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/hexmap.json","w")
+f.write(string)
+
 os.system('rm /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/tables/*')

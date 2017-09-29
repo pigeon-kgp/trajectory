@@ -34,14 +34,14 @@ def hex_round(q,r):
     rx,ry,rz = cube_round(x,y,z)
     return cube_to_axial(rx,ry,rz)
 
-def pixel_to_hex(x, y):
+def pixel_to_hex(x, y, size=2):
     q = (x * sqrt(3)/3 - y / 3) / size
     r = (y * 2/3) / size
-    return hex_round(q,r)
+    hereq, herer = hex_round(q,r)
+    return [hereq,herer]
 
-a = float(raw_input())
-b = float(raw_input())
-size=2
-print pixel_to_hex(a,b)
+# a = float(raw_input())
+# b = float(raw_input())
+# print pixel_to_hex(a,b)
 
 # size is edge length of a hexagon
